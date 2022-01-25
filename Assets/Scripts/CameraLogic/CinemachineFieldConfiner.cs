@@ -1,5 +1,6 @@
 ﻿using System.Reflection.Emit;
 using Cinemachine;
+using Extensions;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -16,13 +17,13 @@ namespace DefaultNamespace
             float cameraHeight = state.Lens.OrthographicSize * 2;
             float cameraWidth = cameraHeight * state.Lens.Aspect;
 
-            Vector3 finalPosition = gameFieldBounder.InFieldRange(state.RawPosition, cameraWidth, cameraHeight);
+            Vector3 finalPosition = gameFieldBounder.InSquareRange(state.RawPosition, cameraWidth, cameraHeight);
             
-            if (cameraWidth > gameFieldBounder.HalfFieldWidth * 2)
+            if (cameraWidth > gameFieldBounder.Width)
             {
                 finalPosition.x = gameFieldBounder.transform.position.x;
             }
-            if(cameraHeight > gameFieldBounder.HalfFieldHeight * 2)
+            if(cameraHeight > gameFieldBounder.Height)
             {
                 finalPosition.y = gameFieldBounder.transform.position.y;
             }

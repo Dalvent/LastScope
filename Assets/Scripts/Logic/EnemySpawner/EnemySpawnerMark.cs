@@ -21,7 +21,7 @@ namespace DefaultNamespace
             var defaultMatrix = Gizmos.matrix;
             Matrix4x4 rotationMatrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.lossyScale);
             Gizmos.matrix = rotationMatrix;
-            Gizmos.DrawCube( Vector3.down * 0.5f, new Vector3(0.3f, 1f, 0.3f));
+            Gizmos.DrawCube( Vector3.up * 0.5f, new Vector3(0.3f, 1f, 0.3f));
             Gizmos.matrix = defaultMatrix;
         }
     }

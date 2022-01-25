@@ -11,6 +11,9 @@ namespace DefaultNamespace.StaticData
         public float Speed;
         [Range(0f, 10f)]
         public float ReloadTime;
+        public float BulletSpeed;
+
+        public ProjectileCustomisationStaticData Customisation;
 
         public GameObject Prefab;
     }

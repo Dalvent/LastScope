@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Services;
+using DefaultNamespace.Factories;
+using DefaultNamespace.Logic;
+using Extensions;
 using UnityEngine;
+using Zenject;
 
 namespace DefaultNamespace
 {
@@ -9,18 +14,53 @@ namespace DefaultNamespace
     {
         public List<EnemySpawnerMark> Spawners;
 
-        private Stack<EnemySpawnerMark> _enemySpawnerMarks;
+        private Queue<EnemySpawnerMark> _spawnersByOccurrenceRate;
+        private IGameFieldService _gameFieldService;
+        private IEnemyFactory _enemyFactory;
 
-        public void Update()
+        [Inject]
+        public void Constructor(IGameFieldService gameFieldService, IEnemyFactory enemyFactory)
         {
-            // Sort to find spawner that exucte faster.
-            var   OrderedByOccurrenceRate();
-
+            _gameFieldService = gameFieldService;
+            _enemyFactory = enemyFactory;
         }
 
-        private Stack<EnemySpawnerMark> OrderedByOccurrenceRate()
+        public void Awake()
         {
-            return new Stack<EnemySpawnerMark>(Spawners
+            // Sort to find spawner that exucte faster.
+            _spawnersByOccurrenceRate = OrderedByOccurrenceRate();
+        }
+
+        private void Update()
+        {
+            while (_spawnersByOccurrenceRate.Count != 0)
+            {
+                EnemySpawnerMark nearestSpawner = _spawnersByOccurrenceRate.Peek();
+                if (CanSpawnOn(nearestSpawner))
+                {
+                    SpawnOn(nearestSpawner);
+                    _spawnersByOccurrenceRate.Dequeue();
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
+        private bool CanSpawnOn(EnemySpawnerMark spawnerMark)
+        {
+            return spawnerMark.transform.position.y - spawnerMark.SpawnWhenFieldIn <= _gameFieldService.Bounder.Top();
+        }
+
+        private void SpawnOn(EnemySpawnerMark spawnerMark)
+        {
+            _enemyFactory.CreateEnemy(spawnerMark.EnemyType, spawnerMark.transform.position, spawnerMark.transform.rotation);
+;        }
+
+        private Queue<EnemySpawnerMark> OrderedByOccurrenceRate()
+        {
+            return new Queue<EnemySpawnerMark>(Spawners
                 .OrderBy(item => item.transform.position.y - item.SpawnWhenFieldIn));
         }
     }

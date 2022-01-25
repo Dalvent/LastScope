@@ -202,11 +202,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1499520716495757401}
   - component: {fileID: 6601600422353001327}
+  - component: {fileID: 139973292}
   - component: {fileID: 1431142098373220281}
   - component: {fileID: 6578232892560444371}
   - component: {fileID: -2988737612409964513}
-  - component: {fileID: 139973292}
   - component: {fileID: 139973293}
+  - component: {fileID: 2011487620203986238}
   m_Layer: 8
   m_Name: PenisEnemy
   m_TagString: Untagged
@@ -256,6 +257,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.88}
   m_EdgeRadius: 0
+--- !u!50 &139973292
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499520716495757382}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!114 &1431142098373220281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,10 +292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShootingFrom:
   - {fileID: 384097944}
-  ProjectilePrefab: {fileID: 592184952942205290, guid: 5f2623dbc3fafd7448ca179ce2db2df6, type: 3}
   ReloadTime: 1
   BulletSpeed: 10
   Damage: 5
+  EnemyFacade: {fileID: 139973293}
 --- !u!114 &6578232892560444371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,28 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4e28a54c3df4547b872bb73b517f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: -1
---- !u!50 &139973292
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499520716495757382}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
+  Speed: 1
 --- !u!114 &139973293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +335,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70d54668234428ab3b8b3388e8c390a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: {fileID: 6578232892560444371}
+  EnemyMoveDirectly: {fileID: -2988737612409964513}
+  EnemyShoot: {fileID: 1431142098373220281}
+--- !u!114 &2011487620203986238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499520716495757382}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d7a89294044c4b856f1f51a03e188b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Despawn: {fileID: 139973293}
 --- !u!1 &1499520716693229227
 GameObject:
   m_ObjectHideFlags: 0

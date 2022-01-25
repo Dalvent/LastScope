@@ -1,3 +1,4 @@
+using DefaultNamespace.Logic;
 using UnityEngine;
 
 namespace CodeBase.Services
@@ -5,20 +6,15 @@ namespace CodeBase.Services
     public class GameFieldService : IGameFieldService
     {
         private readonly GameFieldBounder _bounder;
+        private readonly DespawnArea _despawnArea;
 
-        public GameFieldService(GameFieldBounder bounder)
+        public GameFieldService( GameFieldBounder bounder, DespawnArea despawnArea)
         {
             _bounder = bounder;
+            _despawnArea = despawnArea;
         }
 
-        public float HalfFieldWidth => _bounder.HalfFieldWidth;
-        public float HalfFieldHeight => _bounder.HalfFieldHeight;
-        
-        public Vector3 InFieldRange(Vector3 position, float width, float height)
-        {
-            return _bounder.InFieldRange(position, width, height);
-        }
-
-        public Transform Transform => _bounder.transform;
+        public ISquare Bounder => _bounder;
+        public ISquare DespawnArea => _despawnArea;
     }
 }

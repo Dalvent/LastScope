@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab67dad6d3754f13821a3f3d3ed82e2f, type: 3}
   m_Name: Penusoid
   m_EditorClassIdentifier: 
-  MaxHealth: 0
-  Damage: 0
-  Speed: 0
-  Prefab: {fileID: 0}
+  EnemyType: 0
+  MaxHealth: 4
+  Damage: 1
+  Speed: -0.5
+  ReloadTime: 0
+  BulletSpeed: 5
+  Customisation: {fileID: 11400000, guid: a25c3b48afd35fc42889b60b113ecaa5, type: 2}
+  Prefab: {fileID: 1499520716495757382, guid: 1034645bf3374c944bc0768c06df474d, type: 3}

@@ -32,6 +32,7 @@ namespace DefaultNamespace.Factories
             PlayerShoot shootComponent = player.GetComponent<PlayerShoot>();
             shootComponent.Damage = playerData.Damage;
             shootComponent.ReloadTime = playerData.ReloadTime;
+            shootComponent.BulletSpeed = playerData.BulletSpeed;
             
             PlayerMove moveComponent = player.GetComponent<PlayerMove>();
             moveComponent.Speed = playerData.Speed;

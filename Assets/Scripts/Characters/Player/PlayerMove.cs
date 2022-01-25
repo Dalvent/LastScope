@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CodeBase.Services;
 using DefaultNamespace;
+using Extensions;
 using Services.Input;
 using UnityEngine;
 using Zenject;
@@ -30,7 +31,7 @@ public class PlayerMove : MonoBehaviour
             Vector3 cursorPosition = _inputService.MovePosition;
             cursorPosition.z = transform.position.z;
 
-            Vector3 nextPosition = _gameFieldService.InFieldRange(NextPosition(cursorPosition), Width, Height);
+            Vector3 nextPosition = _gameFieldService.Bounder.InSquareRange(NextPosition(cursorPosition), Width, Height);
             transform.position = nextPosition;
         }
     }

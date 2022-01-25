@@ -11,5 +11,8 @@ namespace DefaultNamespace.StaticData
         
         [Range(0f, 10f)]
         public float ReloadTime;
+        public float BulletSpeed;
+        
+        public ProjectileCustomisationStaticData Customisation;
     }
 }

@@ -20,7 +20,7 @@ namespace CodeBase.Infrastructure
 
         public void Initialize()
         {
-            GameObject hero = _gameFactory.CreatePlayer(_gameFieldService.Transform);
+            GameObject hero = _gameFactory.CreatePlayer(_gameFieldService.Bounder.transform);
             _cinemachineService.Follow(hero.transform);
         }
     }

@@ -1,16 +1,20 @@
 ﻿using System;
+using CodeBase.Services;
 using DefaultNamespace.Factories.Pools;
+using DefaultNamespace.StaticData;
 using UnityEngine;
 
 namespace DefaultNamespace.Factories
 {
     public class EnemyFactory : IEnemyFactory
     {
-        private readonly PenusoidDespawn.Pool _penusoidEnemyPool;
-        
-        public EnemyFactory(PenusoidDespawn.Pool penusoidEnemyPool)
+        private readonly EnemyFacade.Factory _penusoidEnemyFactory;
+        private readonly IStaticDataService _staticDataService;
+
+        public EnemyFactory(EnemyFacade.Factory penusoidEnemyFactory, IStaticDataService staticDataService)
         {
-            _penusoidEnemyPool = penusoidEnemyPool;
+            _penusoidEnemyFactory = penusoidEnemyFactory;
+            _staticDataService = staticDataService;
         }
         
         public GameObject CreateEnemy(EnemyType enemyType, Vector3 position, Quaternion quaternion)
@@ -26,7 +30,21 @@ namespace DefaultNamespace.Factories
 
         private GameObject CreatePenisoid(Vector3 position, Quaternion quaternion)
         {
-            return _penusoidEnemyPool.Spawn(position, quaternion).gameObject;
+            EnemyStaticData penusoidData = _staticDataService.ForEnemy(EnemyType.Penisoid);
+
+            EnemyFacade penusoid = _penusoidEnemyFactory.Create();
+            penusoid.transform.position = position;
+            penusoid.transform.rotation = quaternion;
+            
+            penusoid.Health.MaxHealth = penusoidData.MaxHealth;
+            penusoid.Health.ResetHealth();
+
+            penusoid.EnemyShoot.Damage = penusoidData.Damage;
+            penusoid.EnemyShoot.BulletSpeed = penusoidData.BulletSpeed;
+            
+            penusoid.EnemyMoveDirectly.Speed = penusoidData.Speed;
+
+            return penusoid.gameObject;
         }
     }
 }

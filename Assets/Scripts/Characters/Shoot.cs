@@ -1,50 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using CodeBase.Services;
+using DefaultNamespace.Factories;
+using DefaultNamespace.StaticData;
 using UnityEngine;
+using Zenject;
 
 namespace DefaultNamespace
 {
     public abstract class Shoot : MonoBehaviour
     {
         public List<Transform> ShootingFrom;
-        public Projectile ProjectilePrefab;
         public float ReloadTime;
         public float BulletSpeed = 5;
         public float Damage = 5;
+        private IProjectileFactory _projectileFactory;
 
-        private readonly List<Projectile> ActiveProjectile = new List<Projectile>();
-        private int _projectileLayer;
-
-        private void Awake()
+        [Inject]
+        public void Construct(IProjectileFactory projectileFactory, IGameFieldService gameFieldService)
         {
-            _projectileLayer = GetProjectileLayer();
+            _projectileFactory = projectileFactory;
         }
 
-        protected abstract int GetProjectileLayer();
+        public abstract CharacterType GetCharacterType();
+        public abstract ProjectileCustomisationStaticData GetCustomisation();
+
         
         private void Start()
         {
             StartCoroutine(Shooting());
-        }
-
-        private void Update()
-        {
-            foreach (var projectile in ActiveProjectile)
-            {
-                projectile.transform.position += projectile.transform.rotation * Vector3.up * BulletSpeed * Time.deltaTime;
-
-            }
-
-            ActiveProjectile.RemoveAll(projectile =>
-            {
-                if ((projectile.transform.position - transform.position).sqrMagnitude > 25 * 25)
-                {
-                    Destroy(projectile.gameObject);
-                    return true;
-                }
-
-                return false;
-            });
         }
 
         private IEnumerator Shooting()
@@ -55,11 +39,12 @@ namespace DefaultNamespace
 
                 foreach (var shootingFrom in ShootingFrom)
                 {
-                    Projectile projectileObject = Instantiate(ProjectilePrefab, shootingFrom.position, shootingFrom.rotation);
-                    projectileObject.gameObject.layer = _projectileLayer;
-                    var layer = LayerMask.LayerToName(_projectileLayer);
-                    projectileObject.Damage = Damage;
-                    ActiveProjectile.Add(projectileObject);
+                    _projectileFactory.CreateBullet(GetCharacterType(),
+                        Damage,
+                        BulletSpeed,
+                        GetCustomisation(),
+                        shootingFrom.position,
+                        shootingFrom.rotation);
                 }
             }
         }
