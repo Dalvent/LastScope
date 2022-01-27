@@ -18,6 +18,9 @@ public class BulletProjectile : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(!gameObject.activeSelf)
+            return;
+        
         other.gameObject.GetComponent<IHealth>().TakeDamage(Damage);
         bulletProjectileFacade.Dispose();
     }

@@ -14,9 +14,15 @@ namespace CodeBase.Infrastructure
     {
         public GameFieldBounder GameFieldBounder;
         public DespawnArea DespawnArea;
-        public CinemachineVirtualCamera MainCamera;
 
+        [Inject]
+        public void Construct(IStaticDataService staticDataService)
+        {
+            _staticDataService = staticDataService;
+        }
+        
         public BulletProjectileFacade BulletPrefab;
+        private IStaticDataService _staticDataService;
 
         public override void InstallBindings()
         {
@@ -49,7 +55,7 @@ namespace CodeBase.Infrastructure
         private void BindCinemachineService()
         {
             Container.Bind<ICinemachineService>()
-                .FromInstance(new CinemachineService(MainCamera))
+                .FromInstance(new CinemachineService())
                 .AsSingle();
         }
 

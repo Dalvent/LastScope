@@ -31,7 +31,7 @@ public class PlayerMove : MonoBehaviour
             Vector3 cursorPosition = _inputService.MovePosition;
             cursorPosition.z = transform.position.z;
 
-            Vector3 nextPosition = _gameFieldService.Bounder.InSquareRange(NextPosition(cursorPosition), Width, Height);
+            Vector3 nextPosition = _gameFieldService.Bounder.InSquareRange(NextPosition(cursorPosition), transform.localScale.x * Width, transform.localScale.y * Height);
             transform.position = nextPosition;
         }
     }
@@ -44,6 +44,6 @@ public class PlayerMove : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(0.12f, 0.64f, 0.12f, 0.5f);
-        Gizmos.DrawCube(transform.position, new Vector3(Width, Height, 0.4f));
+        Gizmos.DrawCube(transform.position, new Vector3(transform.localScale.x * Width, transform.localScale.y * Height, 0.4f));
     }
 }

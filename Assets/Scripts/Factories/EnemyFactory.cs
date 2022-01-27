@@ -41,6 +41,7 @@ namespace DefaultNamespace.Factories
 
             penusoid.EnemyShoot.Damage = penusoidData.Damage;
             penusoid.EnemyShoot.BulletSpeed = penusoidData.BulletSpeed;
+            penusoid.EnemyShoot.ReloadTime = penusoidData.ReloadTime;
             
             penusoid.EnemyMoveDirectly.Speed = penusoidData.Speed;
 

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Penusoid
   m_EditorClassIdentifier: 
   EnemyType: 0
-  MaxHealth: 4
+  MaxHealth: 1
   Damage: 1
   Speed: -0.5
-  ReloadTime: 0
+  ReloadTime: 2.45
   BulletSpeed: 5
   Customisation: {fileID: 11400000, guid: a25c3b48afd35fc42889b60b113ecaa5, type: 2}
   Prefab: {fileID: 1499520716495757382, guid: 1034645bf3374c944bc0768c06df474d, type: 3}
