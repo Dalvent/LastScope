@@ -1,8 +1,6 @@
-﻿using System;
-using Unity.Mathematics;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace DefaultNamespace
+namespace LastScope.Characters
 {
     public class Health : MonoBehaviour, IHealth
     {

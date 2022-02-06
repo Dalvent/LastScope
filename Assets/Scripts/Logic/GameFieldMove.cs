@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using Extensions;
+using LastScope.Extensions;
 using UnityEngine;
 
-public class GameFieldMove : MonoBehaviour
+namespace LastScope.Logic
 {
-    [Min(0)] public float Speed;
-    void Update()
+    public class GameFieldMove : MonoBehaviour
     {
-        transform.position = transform.position.AddY(Speed * Time.deltaTime);
+        [Min(0)] public float Speed;
+        void Update()
+        {
+            transform.position = transform.position.AddY(Speed * Time.deltaTime);
+        }
     }
 }

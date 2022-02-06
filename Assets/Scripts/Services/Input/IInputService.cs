@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Services.Input
+namespace LastScope.Services.Input
 {
     public interface IInputService
     {

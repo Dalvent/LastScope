@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CodeBase.Services
+namespace LastScope.Services.Game
 {
     public interface ICinemachineService
     {

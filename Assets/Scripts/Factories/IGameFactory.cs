@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace.Factories
+namespace LastScope.Factories
 {
     public interface IGameFactory
     {

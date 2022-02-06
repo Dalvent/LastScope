@@ -1,10 +1,8 @@
-﻿using CodeBase.Services;
-using DefaultNamespace.Factories.Pools;
-using DefaultNamespace.StaticData;
-using UnityEngine;
+﻿using LastScope.Services;
+using LastScope.StaticData;
 using Zenject;
 
-namespace DefaultNamespace
+namespace LastScope.Characters.Enemy
 {
     public class EnemyShoot : Shoot
     {

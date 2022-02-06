@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using Zenject;
+﻿using LastScope.Characters.Enemy;
+using UnityEngine;
 
-namespace DefaultNamespace.Factories
+namespace LastScope.Factories
 {
     public interface IEnemyFactory
     {

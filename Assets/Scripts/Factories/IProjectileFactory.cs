@@ -1,8 +1,8 @@
-﻿using System;
-using DefaultNamespace.StaticData;
+﻿using LastScope.Characters;
+using LastScope.StaticData;
 using UnityEngine;
 
-namespace DefaultNamespace.Factories
+namespace LastScope.Factories
 {
     public interface IProjectileFactory
     {

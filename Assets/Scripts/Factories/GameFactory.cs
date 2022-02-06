@@ -1,9 +1,11 @@
-using CodeBase.Services;
-using DefaultNamespace.StaticData;
+using LastScope.Characters;
+using LastScope.Characters.Player;
+using LastScope.Services;
+using LastScope.StaticData;
 using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace.Factories
+namespace LastScope.Factories
 {
     public class GameFactory : IGameFactory
     {

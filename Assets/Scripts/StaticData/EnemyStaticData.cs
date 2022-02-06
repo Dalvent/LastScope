@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using LastScope.Characters.Enemy;
+using UnityEngine;
 
-namespace DefaultNamespace.StaticData
+namespace LastScope.StaticData
 {
     [CreateAssetMenu(fileName = "EnemyData", menuName = "StaticData/Enemy/Default")]    
     public class EnemyStaticData : ScriptableObject

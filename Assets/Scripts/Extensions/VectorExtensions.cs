@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Extensions
+namespace LastScope.Extensions
 {
     public static class VectorExtensions
     {

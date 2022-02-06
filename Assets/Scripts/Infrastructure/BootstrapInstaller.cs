@@ -1,10 +1,8 @@
-using CodeBase.Services;
-using DefaultNamespace.Factories;
-using Services.Input;
-using UnityEngine;
+using LastScope.Services;
+using LastScope.Services.Input;
 using Zenject;
 
-namespace CodeBase.Infrastructure
+namespace LastScope.Infrastructure
 {
     public class BootstrapInstaller : MonoInstaller, ICoroutineRunner
     {

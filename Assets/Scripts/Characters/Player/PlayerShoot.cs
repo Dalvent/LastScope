@@ -1,27 +1,25 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using CodeBase.Services;
-using DefaultNamespace;
-using DefaultNamespace.StaticData;
-using UnityEngine;
+using LastScope.Services;
+using LastScope.StaticData;
 using Zenject;
 
-public class PlayerShoot : Shoot
+namespace LastScope.Characters.Player
 {
-    private IStaticDataService _staticDataService;
-
-    public override CharacterType GetCharacterType()
-        => CharacterType.Player;
-
-    [Inject]
-    public void Construct(IStaticDataService staticDataService)
+    public class PlayerShoot : Shoot
     {
-        _staticDataService = staticDataService;
-    }
+        private IStaticDataService _staticDataService;
+
+        public override CharacterType GetCharacterType()
+            => CharacterType.Player;
+
+        [Inject]
+        public void Construct(IStaticDataService staticDataService)
+        {
+            _staticDataService = staticDataService;
+        }
     
-    public override ProjectileCustomisationStaticData GetCustomisation()
-    {
-        return _staticDataService.Player.Customisation;
+        public override ProjectileCustomisationStaticData GetCustomisation()
+        {
+            return _staticDataService.Player.Customisation;
+        }
     }
 }

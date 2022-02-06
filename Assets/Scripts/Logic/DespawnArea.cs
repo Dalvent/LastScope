@@ -1,19 +1,20 @@
-﻿using UnityEngine;
+﻿using System;
+using LastScope.Additional;
+using UnityEngine;
 
-namespace DefaultNamespace.Logic
+namespace LastScope.Logic
 {
     public class DespawnArea : MonoBehaviour, ISquare
     {
-        [SerializeField] private float _width;
-        [SerializeField] private float _height;
-
-        public float Width => _width;
-        public float Height => _height;
-        
-        private void OnDrawGizmos()
+        private void OnTriggerExit2D(Collider2D other)
         {
-            Gizmos.color = new Color(1f, 0.5f, 0.5f, 0.05f);
-            Gizmos.DrawCube(transform.position, new Vector3(Width, Height, 1));
+            var disposable = other.GetComponent<IDisposable>();
+            if (disposable != null)
+            {
+                disposable.Dispose();
+            }
+            
+            Destroy(other.gameObject);
         }
     }
 }

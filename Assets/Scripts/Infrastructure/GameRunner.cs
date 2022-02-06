@@ -1,9 +1,9 @@
-﻿using CodeBase.Services;
-using DefaultNamespace.Factories;
+﻿using LastScope.Factories;
+using LastScope.Services.Game;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Infrastructure
+namespace LastScope.Infrastructure
 {
     public class GameRunner : IInitializable
     {

@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace
+﻿namespace LastScope.Characters
 {
     public interface IHealth
     {

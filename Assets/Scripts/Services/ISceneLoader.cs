@@ -1,7 +1,6 @@
 using System;
-using System.ComponentModel;
 
-namespace CodeBase.Services
+namespace LastScope.Services
 {
     public interface ISceneLoader
     {

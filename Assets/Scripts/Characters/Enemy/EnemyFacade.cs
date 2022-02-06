@@ -1,7 +1,6 @@
-﻿using UnityEngine;
-using Zenject;
+﻿using Zenject;
 
-namespace DefaultNamespace.Factories.Pools
+namespace LastScope.Characters.Enemy
 {
     public class EnemyFacade : Poolable
     {

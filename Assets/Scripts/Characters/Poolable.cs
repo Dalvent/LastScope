@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace.Factories.Pools
+namespace LastScope.Characters
 {
     public abstract class Poolable : MonoBehaviour, IPoolable<IMemoryPool>
     {

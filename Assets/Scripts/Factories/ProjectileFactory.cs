@@ -1,10 +1,9 @@
-﻿using System;
-using CodeBase.Services;
-using DefaultNamespace.Factories.Pools.Projectile;
-using DefaultNamespace.StaticData;
+﻿using LastScope.Characters;
+using LastScope.Characters.Projectile;
+using LastScope.StaticData;
 using UnityEngine;
 
-namespace DefaultNamespace.Factories
+namespace LastScope.Factories
 {
     public class ProjectileFactory : IProjectileFactory
     {

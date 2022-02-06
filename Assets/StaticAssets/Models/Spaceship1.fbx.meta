@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Light red emission
-    second: {fileID: 2100000, guid: eeda8e5511ed0494ea45f29b908d1d8c, type: 2}
+    second: {fileID: 2100000, guid: a9aa4d682c71a304b87783910b8a6ef1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -23,17 +23,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metallic Plates
-    second: {fileID: 2100000, guid: a0e138ce6cd06f74d83cf3884415be92, type: 2}
+    second: {fileID: 2100000, guid: a0997960b40575049b460834efdabd2d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Procedural Decorative Glass
-    second: {fileID: 2100000, guid: f1ff529485c8eb146ae209c4616b41bd, type: 2}
+    second: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Sci fi wall
-    second: {fileID: 2100000, guid: a1f30c6b2183c3f4a9ffa3cb444d6ddc, type: 2}
+    second: {fileID: 2100000, guid: 6eddc67d168e2eb4b9d86b0cdfb48d9e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

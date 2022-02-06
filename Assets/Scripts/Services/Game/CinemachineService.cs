@@ -1,7 +1,6 @@
-using Cinemachine;
 using UnityEngine;
 
-namespace CodeBase.Services
+namespace LastScope.Services.Game
 {
     public class CinemachineService : ICinemachineService
     {

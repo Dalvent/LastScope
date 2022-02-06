@@ -1,10 +1,10 @@
 ﻿using System;
-using CodeBase.Services;
-using DefaultNamespace.Factories.Pools;
-using DefaultNamespace.StaticData;
+using LastScope.Characters.Enemy;
+using LastScope.Services;
+using LastScope.StaticData;
 using UnityEngine;
 
-namespace DefaultNamespace.Factories
+namespace LastScope.Factories
 {
     public class EnemyFactory : IEnemyFactory
     {

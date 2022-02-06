@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using LastScope.Logic.EnemySpawner;
 using UnityEditor;
 using UnityEngine;
 
-namespace DefaultNamespace.Editor
+namespace LastScope.Editor
 {
     [CustomEditor(typeof(EnemySpawnerGroup))]
     public class EnemySpawnerGroupEditor : UnityEditor.Editor

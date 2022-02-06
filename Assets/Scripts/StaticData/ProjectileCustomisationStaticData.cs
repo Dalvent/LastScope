@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace.StaticData
+namespace LastScope.StaticData
 {
     [CreateAssetMenu(fileName = "ProjectileCustomisation", menuName = "StaticData/Projectile/Customisation")]    
     public class ProjectileCustomisationStaticData : ScriptableObject

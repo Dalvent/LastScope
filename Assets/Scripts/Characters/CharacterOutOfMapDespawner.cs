@@ -1,11 +1,9 @@
-﻿using System;
-using CodeBase.Services;
-using DefaultNamespace.Factories.Pools;
-using Extensions;
+﻿using LastScope.Extensions;
+using LastScope.Services.Game;
 using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace
+namespace LastScope.Characters
 {
     public class CharacterOutOfMapDespawner : MonoBehaviour
     {

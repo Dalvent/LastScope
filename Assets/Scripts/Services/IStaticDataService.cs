@@ -1,7 +1,7 @@
-﻿using DefaultNamespace;
-using DefaultNamespace.StaticData;
+﻿using LastScope.Characters.Enemy;
+using LastScope.StaticData;
 
-namespace CodeBase.Services
+namespace LastScope.Services
 {
     public interface IStaticDataService
     {

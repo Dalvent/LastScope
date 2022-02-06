@@ -1,7 +1,6 @@
-using DefaultNamespace.Logic;
-using UnityEngine;
+using LastScope.Logic;
 
-namespace CodeBase.Services
+namespace LastScope.Services.Game
 {
     public class GameFieldService : IGameFieldService
     {

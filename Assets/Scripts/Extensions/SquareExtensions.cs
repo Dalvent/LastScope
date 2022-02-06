@@ -1,8 +1,8 @@
 ﻿using System;
-using DefaultNamespace.Logic;
+using LastScope.Logic;
 using UnityEngine;
 
-namespace Extensions
+namespace LastScope.Extensions
 {
     public static class SquareExtensions
     {

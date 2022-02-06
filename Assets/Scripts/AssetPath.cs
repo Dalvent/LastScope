@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace
+﻿namespace LastScope
 {
     public static class AssetPath
     {

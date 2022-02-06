@@ -1,14 +1,12 @@
-﻿using Cinemachine;
-using CodeBase.Services;
-using DefaultNamespace;
-using DefaultNamespace.Factories;
-using DefaultNamespace.Factories.Pools;
-using DefaultNamespace.Factories.Pools.Projectile;
-using DefaultNamespace.Logic;
-using UnityEngine;
+﻿using LastScope.Characters.Enemy;
+using LastScope.Characters.Projectile;
+using LastScope.Factories;
+using LastScope.Logic;
+using LastScope.Services;
+using LastScope.Services.Game;
 using Zenject;
 
-namespace CodeBase.Infrastructure
+namespace LastScope.Infrastructure
 {
     public class GameplayInstaller : MonoInstaller
     {

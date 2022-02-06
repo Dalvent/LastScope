@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using CodeBase.Services;
-using DefaultNamespace.Factories;
-using DefaultNamespace.StaticData;
+using LastScope.Factories;
+using LastScope.StaticData;
 using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace
+namespace LastScope.Characters
 {
     public abstract class Shoot : MonoBehaviour
     {
@@ -14,10 +13,11 @@ namespace DefaultNamespace
         public float ReloadTime;
         public float BulletSpeed = 5;
         public float Damage = 5;
+        
         private IProjectileFactory _projectileFactory;
 
         [Inject]
-        public void Construct(IProjectileFactory projectileFactory, IGameFieldService gameFieldService)
+        public void Construct(IProjectileFactory projectileFactory)
         {
             _projectileFactory = projectileFactory;
         }

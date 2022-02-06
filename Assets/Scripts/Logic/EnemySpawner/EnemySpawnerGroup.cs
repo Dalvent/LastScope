@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using CodeBase.Services;
-using DefaultNamespace.Factories;
-using DefaultNamespace.Logic;
-using Extensions;
+using LastScope.Extensions;
+using LastScope.Factories;
+using LastScope.Services.Game;
 using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace
+namespace LastScope.Logic.EnemySpawner
 {
     public class EnemySpawnerGroup : MonoBehaviour
     {

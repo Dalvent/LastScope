@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace CodeBase.Services
+namespace LastScope.Services
 {
     public class SceneLoader : ISceneLoader
     {

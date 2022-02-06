@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace.Logic
+namespace LastScope.Logic
 {
     public interface ISquare
     {

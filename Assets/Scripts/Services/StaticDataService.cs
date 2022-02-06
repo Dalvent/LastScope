@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using DefaultNamespace;
-using DefaultNamespace.StaticData;
+using LastScope.Characters.Enemy;
+using LastScope.StaticData;
 using UnityEngine;
 
-namespace CodeBase.Services
+namespace LastScope.Services
 {
     public class StaticDataService : IStaticDataService
     {

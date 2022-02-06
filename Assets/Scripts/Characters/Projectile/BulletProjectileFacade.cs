@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace.Factories.Pools.Projectile
+namespace LastScope.Characters.Projectile
 {
     public class BulletProjectileFacade : Poolable
     {
