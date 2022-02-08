@@ -10,7 +10,7 @@ namespace LastScope.Factories
             CharacterType characterType,
             float damage,
             float speed,
-            ProjectileCustomisationStaticData customisation,
+            BulletCustomisation customisation,
             Vector3 position, 
             Quaternion rotation);
     }

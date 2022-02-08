@@ -9,7 +9,10 @@ namespace LastScope.Infrastructure
         public override void InstallBindings()
         {
             BindInstallersInterface();
-            
+
+            BindResolutionService();
+            BindPlayerService();
+            BindCameraService();
             BindInput();
             BindAssetProvider();
             BindSceneLoader();
@@ -23,10 +26,31 @@ namespace LastScope.Infrastructure
                 .AsSingle();
         }
 
+        private void BindResolutionService()
+        {
+            Container.Bind<IResolutionService>()
+                .To<ResolutionService>()
+                .AsSingle();
+        }
+
+        private void BindPlayerService()
+        {
+            Container.Bind<IPlayerService>()
+                .To<PlayerService>()
+                .AsSingle();
+        }
+
+        private void BindCameraService()
+        {
+            Container.Bind<ICameraService>()
+                .To<CameraService>()
+                .AsSingle();
+        }
+
         private void BindInput()
         {
             Container.Bind<IInputService>()
-                .To<CursorInputService>()
+                .To<InputService>()
                 .AsSingle();
         }
 

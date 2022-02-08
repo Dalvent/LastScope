@@ -1,5 +1,9 @@
-﻿using LastScope.Factories;
-using LastScope.Services.Game;
+﻿using LastScope.Characters.GameField;
+using LastScope.Characters.Player;
+using LastScope.Factories;
+using LastScope.Logic;
+using LastScope.Services;
+using LastScope.Services.Input;
 using UnityEngine;
 using Zenject;
 
@@ -7,21 +11,23 @@ namespace LastScope.Infrastructure
 {
     public class GameRunner : IInitializable
     {
+        private readonly ICameraService _cameraService;
+        private readonly IPlayerService _playerService;
         private readonly IGameFactory _gameFactory;
-        private readonly ICinemachineService _cinemachineService;
-        private readonly IGameFieldService _gameFieldService;
+        private readonly IGameFieldFacade _gameFieldFacade;
 
-        public GameRunner(ICinemachineService cinemachineService, IGameFieldService gameFieldService, IGameFactory gameFactory)
+        public GameRunner(ICameraService cameraService, IPlayerService playerService, IGameFactory gameFactory, IGameFieldFacade gameFieldFacade)
         {
-            _cinemachineService = cinemachineService;
-            _gameFieldService = gameFieldService;
+            _cameraService = cameraService;
+            _playerService = playerService;
             _gameFactory = gameFactory;
+            _gameFieldFacade = gameFieldFacade;
         }
 
         public void Initialize()
         {
-            GameObject hero = _gameFactory.CreatePlayer(_gameFieldService.Bounder.transform);
-            _cinemachineService.Follow(hero.transform);
+            _playerService.Init(_gameFactory.CreatePlayer(_gameFieldFacade.transform));
+            _cameraService.Init(Camera.main);
         }
     }
 }

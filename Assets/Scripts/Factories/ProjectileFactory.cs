@@ -7,9 +7,6 @@ namespace LastScope.Factories
 {
     public class ProjectileFactory : IProjectileFactory
     {
-        private const string PlayerProjectileLayer = "PlayerProjectile";
-        private const string EnemyProjectileLayer = "EnemyProjectile";
-        
         private readonly BulletProjectileFacade.Factory _bulletProjectileDespawn;
 
         public ProjectileFactory(BulletProjectileFacade.Factory bulletProjectileDespawn)
@@ -21,7 +18,7 @@ namespace LastScope.Factories
             CharacterType creator, 
             float damage, 
             float speed,
-            ProjectileCustomisationStaticData customisation,
+            BulletCustomisation customisation,
             Vector3 position, 
             Quaternion rotation)
         {

@@ -13,6 +13,6 @@ namespace LastScope.StaticData
         public float ReloadTime;
         public float BulletSpeed;
         
-        public ProjectileCustomisationStaticData Customisation;
+        public BulletCustomisation BulletCustomisation;
     }
 }

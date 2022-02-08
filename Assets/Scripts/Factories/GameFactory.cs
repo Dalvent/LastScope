@@ -1,9 +1,13 @@
+using System;
 using LastScope.Characters;
+using LastScope.Characters.Enemy;
 using LastScope.Characters.Player;
 using LastScope.Services;
 using LastScope.StaticData;
+using ModestTree;
 using UnityEngine;
 using Zenject;
+using Object = UnityEngine.Object;
 
 namespace LastScope.Factories
 {
@@ -31,15 +35,47 @@ namespace LastScope.Factories
             healthComponent.MaxHealth = playerData.MaxHealth;
             healthComponent.ResetHealth();
             
-            PlayerShoot shootComponent = player.GetComponent<PlayerShoot>();
-            shootComponent.Damage = playerData.Damage;
-            shootComponent.ReloadTime = playerData.ReloadTime;
-            shootComponent.BulletSpeed = playerData.BulletSpeed;
+            BulletShoot bulletShootComponent = player.GetComponent<BulletShoot>();
+            bulletShootComponent.Damage = playerData.Damage;
+            bulletShootComponent.ReloadTime = playerData.ReloadTime;
+            bulletShootComponent.BulletSpeed = playerData.BulletSpeed;
             
             PlayerMove moveComponent = player.GetComponent<PlayerMove>();
             moveComponent.Speed = playerData.Speed;
             
             return player;
+        }
+
+
+        public GameObject CreateEnemy(EnemyStaticData enemyStaticData, Vector3 position, Quaternion quaternion)
+        {
+            return enemyStaticData.BehaviorType switch
+            {
+                BehaviorType.None => _diContainer.InstantiatePrefab(enemyStaticData.Prefab, position, quaternion, null),
+                BehaviorType.MoveAndShoot => CreateMoveDirectionAndShoot(enemyStaticData, position, quaternion),
+                _ => throw new ArgumentOutOfRangeException("BehaviorType is unown!")
+            };
+        }
+
+        private GameObject CreateMoveDirectionAndShoot(EnemyStaticData enemyStaticData, Vector3 position, Quaternion quaternion)
+        {
+            GameObject moveAndShootEnemy = _diContainer.InstantiatePrefab(enemyStaticData.Prefab, position, quaternion, null);
+            moveAndShootEnemy.transform.position = position;
+            moveAndShootEnemy.transform.rotation = quaternion;
+
+            Health health = moveAndShootEnemy.GetComponent<Health>();
+            health.MaxHealth = enemyStaticData.MaxHealth;
+            health.ResetHealth();
+
+            BulletShoot enemyShoot = moveAndShootEnemy.GetComponent<BulletShoot>();
+            enemyShoot.Damage = enemyStaticData.Damage;
+            enemyShoot.BulletSpeed = enemyStaticData.BulletSpeed;
+            enemyShoot.ReloadTime = enemyStaticData.ReloadTime;
+            
+            IEnemyMove enemyMove = moveAndShootEnemy.GetComponent<IEnemyMove>();
+            enemyMove.Speed = enemyStaticData.Speed;
+
+            return moveAndShootEnemy;
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Zenject;
 
 namespace LastScope.Characters
 {
-    public abstract class Poolable : MonoBehaviour, IPoolable<IMemoryPool>
+    public abstract class Poolable : MonoBehaviour, IPoolable<IMemoryPool>, IDisposable
     {
         private IMemoryPool _pool;
 

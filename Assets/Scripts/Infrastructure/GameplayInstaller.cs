@@ -1,35 +1,22 @@
-﻿using LastScope.Characters.Enemy;
+﻿using LastScope.Characters.GameField;
 using LastScope.Characters.Projectile;
 using LastScope.Factories;
-using LastScope.Logic;
 using LastScope.Services;
-using LastScope.Services.Game;
 using Zenject;
 
 namespace LastScope.Infrastructure
 {
     public class GameplayInstaller : MonoInstaller
     {
-        public GameFieldBounder GameFieldBounder;
-        public DespawnArea DespawnArea;
-
-        [Inject]
-        public void Construct(IStaticDataService staticDataService)
-        {
-            _staticDataService = staticDataService;
-        }
-        
+        public GameFieldFacade GameFieldFacade;
         public BulletProjectileFacade BulletPrefab;
-        private IStaticDataService _staticDataService;
 
         public override void InstallBindings()
         {
             BindPools();
             
-            BindGameFieldService();
-            BindCinemachineService();
+            BindGameFieldFacade();
             BindFactory();
-            BindEnemyFactory();
             BindProjecileFactory();
 
             InitializeGameRunner();
@@ -37,23 +24,16 @@ namespace LastScope.Infrastructure
 
         private void BindPools()
         {
-            IStaticDataService staticDataService = Container.Resolve<IStaticDataService>();
-
-            Container.BindFactory<EnemyFacade, EnemyFacade.Factory>()
-                .FromMonoPoolableMemoryPool(b => b
-                    .WithInitialSize(10)
-                    .FromComponentInNewPrefab(staticDataService.ForEnemy(EnemyType.Penisoid).Prefab));
-            
             Container.BindFactory<BulletProjectileFacade, BulletProjectileFacade.Factory>()
                 .FromMonoPoolableMemoryPool(b => b
                     .WithInitialSize(30)
                     .FromComponentInNewPrefab(BulletPrefab));
         }
 
-        private void BindCinemachineService()
+        private void BindGameFieldFacade()
         {
-            Container.Bind<ICinemachineService>()
-                .FromInstance(new CinemachineService())
+            Container.Bind<IGameFieldFacade>()
+                .FromInstance(GameFieldFacade)
                 .AsSingle();
         }
 
@@ -65,24 +45,10 @@ namespace LastScope.Infrastructure
                 .AsSingle();
         }
 
-        private void BindGameFieldService()
-        {
-            Container.Bind<IGameFieldService>()
-                .FromInstance(new GameFieldService(GameFieldBounder, DespawnArea))
-                .AsSingle();
-        }
-
         private void BindFactory()
         {
             Container.Bind<IGameFactory>()
                 .To<GameFactory>()
-                .AsSingle();
-        }
-
-        private void BindEnemyFactory()
-        {
-            Container.Bind<IEnemyFactory>()
-                .To<EnemyFactory>()
                 .AsSingle();
         }
 

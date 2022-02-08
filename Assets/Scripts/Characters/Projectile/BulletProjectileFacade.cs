@@ -23,6 +23,10 @@ namespace LastScope.Characters.Projectile
 
                 _ownerType = value;
                 gameObject.layer = GetOwnerProjectileLayer(_ownerType);
+                foreach (Transform transform  in gameObject.transform)
+                {
+                    transform.gameObject.layer = GetOwnerProjectileLayer(_ownerType);
+                }
             }
         }
 
