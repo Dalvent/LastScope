@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7659701716821723849
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804516, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172279433534804517, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: EnemyStaticData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0829a0843e913844f8da3f0e593bc476, type: 2}
+    - target: {fileID: 1172279433534804518, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1172279433534804518, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}
+      propertyPath: m_Name
+      value: FrogEnemySpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45d3ce7ffb491ad499af010b896e1a36, type: 3}

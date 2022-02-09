@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5960c5e8e4e943a1b491bb488e15ef40, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  MaxHealth: 20
+  MaxHealth: 40
   Damage: 2
   Speed: 4
-  ReloadTime: 0
+  ReloadTime: 0.07
   BulletSpeed: 5
   BulletCustomisation: {fileID: 11400000, guid: c6f854e67bb6da6488b5dc915107ee4c, type: 2}
