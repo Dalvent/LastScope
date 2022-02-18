@@ -15,6 +15,6 @@ MonoBehaviour:
   MaxHealth: 40
   Damage: 2
   Speed: 4
-  ReloadTime: 0.07
-  BulletSpeed: 5
+  ReloadTime: 0.56
+  BulletSpeed: 8
   BulletCustomisation: {fileID: 11400000, guid: c6f854e67bb6da6488b5dc915107ee4c, type: 2}

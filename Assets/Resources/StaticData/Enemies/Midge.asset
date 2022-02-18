@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Midge
   BehaviorType: 1
-  MaxHealth: 20
-  Damage: 20
-  Speed: 6
-  ReloadTime: 3
-  BulletSpeed: 15
+  MaxHealth: 3
+  Damage: 3
+  Speed: 2
+  ReloadTime: 0.3
+  BulletSpeed: 10
   Prefab: {fileID: 7716790116448774766, guid: d525022827910974d8becd859c954c18, type: 3}

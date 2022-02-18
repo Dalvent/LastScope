@@ -1,5 +1,6 @@
 ﻿using LastScope.Additional;
 using LastScope.Logic;
+using LastScope.Logic.Spawner;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,7 +11,6 @@ namespace LastScope.Editor
         [DrawGizmo(GizmoType.Selected | GizmoType.Active | GizmoType.NonSelected)]
         public static void OnDrawGizmo(EnemySpawner spawner, GizmoType gizmoType)
         {
-            return;
             Gizmos.color = spawner.IsExecuted ? Color.gray : Color.green;
             MeshFilter[] meshFilters = spawner.EnemyStaticData.Prefab.GetComponentsInChildren<MeshFilter>();
             

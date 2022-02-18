@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 139973292}
   - component: {fileID: 6578232892560444371}
   - component: {fileID: -2988737612409964513}
-  - component: {fileID: 139973293}
   - component: {fileID: 7499480792513560675}
+  - component: {fileID: 4299072058671552872}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -83,21 +83,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0
---- !u!114 &139973293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499520716495757382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d70d54668234428ab3b8b3388e8c390a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: {fileID: 6578232892560444371}
-  EnemyMoveDirectly: {fileID: -2988737612409964513}
-  enemyBulletShoot: {fileID: 0}
 --- !u!114 &7499480792513560675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +95,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf4abcbfe604241b428be405b2afc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4299072058671552872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499520716495757382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ae62276b224623b46630134cf3f1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyMove: {fileID: -2988737612409964513}
+  LookAtType: 0
