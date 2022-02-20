@@ -7,5 +7,6 @@ namespace LastScope.Services
         void Init(Camera mainCamera);
         Camera GameCamera { get; }
         Camera MainCamera { get; }
+        Camera BackgroundCamera { get; }
     }
 }

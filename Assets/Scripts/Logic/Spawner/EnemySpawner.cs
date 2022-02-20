@@ -1,8 +1,8 @@
 ﻿using System;
 using LastScope.Characters.Enemy;
 using LastScope.Characters.Enemy.Trajectory;
-using LastScope.Characters.GameField;
 using LastScope.Factories;
+using LastScope.Logic.GameField;
 using LastScope.StaticData;
 using UnityEngine;
 using Zenject;

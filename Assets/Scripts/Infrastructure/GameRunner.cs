@@ -1,7 +1,7 @@
-﻿using LastScope.Characters.GameField;
-using LastScope.Characters.Player;
+﻿using LastScope.Characters.Player;
 using LastScope.Factories;
 using LastScope.Logic;
+using LastScope.Logic.GameField;
 using LastScope.Services;
 using LastScope.Services.Input;
 using UnityEngine;

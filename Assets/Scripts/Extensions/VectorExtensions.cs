@@ -25,5 +25,27 @@ namespace LastScope.Extensions
             vector.y += value;
             return vector;
         }
+        
+        public static Vector2 SetX(this Vector2 vector, float x)
+        {
+            vector.x = x;
+            return vector;
+        }
+        public static Vector2 SetY(this Vector2 vector, float y)
+        {
+            vector.y = y;
+            return vector;
+        }
+        
+        public static Vector2 AddX(this Vector2 vector, float value)
+        {
+            vector.x += value;
+            return vector;
+        }
+        public static Vector2 AddY(this Vector2 vector, float value)
+        {
+            vector.y += value;
+            return vector;
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace LastScope.Characters
+﻿namespace LastScope.Characters.Shoot
 {
     public interface IShoot
     {

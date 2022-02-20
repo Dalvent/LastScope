@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using LastScope.Characters.GameField;
+using LastScope.Logic.GameField;
 using UnityEngine;
 using Zenject;
 
-namespace LastScope
+namespace LastScope.Characters
 {
     public class DestoryOutOfMap : MonoBehaviour
     {

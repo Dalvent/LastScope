@@ -1,6 +1,6 @@
-﻿using LastScope.Characters.GameField;
-using LastScope.Characters.Projectile;
+﻿using LastScope.Characters.Projectile;
 using LastScope.Factories;
+using LastScope.Logic.GameField;
 using LastScope.Services;
 using Zenject;
 

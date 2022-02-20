@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using LastScope.Characters;
+using LastScope.Characters.Shoot;
 using UnityEngine;
 
-namespace LastScope
+namespace LastScope.Characters.Loot
 {
     public class UpgradeGunsCount : MonoBehaviour
     {

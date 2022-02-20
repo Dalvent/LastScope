@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using Zenject.SpaceFighter;
 
-namespace LastScope.Characters
+namespace LastScope.Characters.Shoot
 {
     public class ShootGunBulletShoot : BulletShoot
     {

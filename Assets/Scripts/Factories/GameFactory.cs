@@ -1,8 +1,9 @@
 using System;
 using LastScope.Characters;
 using LastScope.Characters.Enemy;
-using LastScope.Characters.GameField;
 using LastScope.Characters.Player;
+using LastScope.Characters.Shoot;
+using LastScope.Logic.GameField;
 using LastScope.Services;
 using LastScope.StaticData;
 using ModestTree;

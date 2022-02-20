@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace LastScope.Extensions
 {
-    public static class CameraExtensions
+    public static class CameraAccessingExtensions
     {
         private const string MainCameraTag = "MainCamera";
         private const string GameplayCameraTag = "GameplayCamera";
-        private const string BackgroundCameraTag = "GameplayCamera";
+        private const string BackgroundCameraTag = "BackgroundCamera";
         
         public static Camera GetGameplayCamera(this Camera mainCamera)
         {
@@ -30,11 +30,11 @@ namespace LastScope.Extensions
         
         public static Camera GetBackgroundCamera(this Camera mainCamera)
         {
-            if (mainCamera.CompareTag(MainCameraTag))
+            if (!mainCamera.CompareTag(MainCameraTag))
             {
                 throw new ArgumentException($"Camera must have tag {MainCameraTag}, but it have {mainCamera.tag}");
             }
-
+            
             Camera backgroundCamera = mainCamera.gameObject
                 .FindInChildWithTag(BackgroundCameraTag)
                 .GetComponent<Camera>();

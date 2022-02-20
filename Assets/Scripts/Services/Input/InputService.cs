@@ -1,5 +1,4 @@
 ﻿using LastScope.CameraLogic;
-using LastScope.Characters.GameField;
 using LastScope.Characters.Player;
 using UnityEngine;
 

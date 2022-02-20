@@ -1,10 +1,7 @@
-﻿using System;
-using LastScope.Characters;
-using Unity.Mathematics;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace LastScope
+namespace LastScope.Characters.Loot
 {
     public class DropLootOnDied : MonoBehaviour
     {

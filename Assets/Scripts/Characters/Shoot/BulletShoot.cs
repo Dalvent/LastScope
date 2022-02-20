@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using LastScope.Factories;
 using LastScope.StaticData;
 using UnityEngine;
 using Zenject;
 
-namespace LastScope.Characters
+namespace LastScope.Characters.Shoot
 {
     public class BulletShoot : MonoBehaviour, IShoot
     {
