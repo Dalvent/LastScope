@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04aff77c86540a0977b267e25be4287, type: 3}
   m_Name: BlueBullet
   m_EditorClassIdentifier: 
-  Width: 0.06
-  Height: 0.17
+  Width: 0.03
+  Height: 0.12
   Material: {fileID: 2100000, guid: a0997960b40575049b460834efdabd2d, type: 2}

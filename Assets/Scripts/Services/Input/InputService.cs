@@ -8,13 +8,11 @@ namespace LastScope.Services.Input
     {
         private readonly IPlayerService _playerService;
         private readonly ICameraService _cameraService;
-        private readonly int TouchLayer;
 
         public InputService(ICameraService cameraService, IPlayerService playerService)
         {
             _playerService = playerService;
             _cameraService = cameraService;
-            TouchLayer = LayerMask.NameToLayer("Touch");
         }
 
         public bool UseMove

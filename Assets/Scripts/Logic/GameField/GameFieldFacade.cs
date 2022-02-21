@@ -21,12 +21,12 @@ namespace LastScope.Logic.GameField
 
         public float GetTop()
         {
-            return _cameraService.MainCamera.PerspectiveLocalTop(DistanceToCamera());
+            return _cameraService.GameCamera.PerspectiveLocalTop(DistanceToCamera());
         }
 
         public float GetBottom()
         {
-            return _cameraService.MainCamera.PerspectiveLocalTop(DistanceToCamera());
+            return _cameraService.GameCamera.PerspectiveLocalTop(DistanceToCamera());
         }
 
         public bool IsOutOfMap(Vector2 point)
@@ -36,7 +36,7 @@ namespace LastScope.Logic.GameField
 
         private float DistanceToCamera()
         {
-            return _cameraService.MainCamera.transform.position.y - transform.position.y;
+            return _cameraService.GameCamera.transform.position.z - transform.position.z;
         }
     }
 }

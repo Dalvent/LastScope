@@ -16,7 +16,7 @@ MonoBehaviour:
   BehaviorType: 1
   MaxHealth: 1
   Damage: 1
-  Speed: 9
+  Speed: 4
   ReloadTime: 0.38
   BulletSpeed: 9
   Prefab: {fileID: 3906175246215502482, guid: 268f0d32392002f4da0b5e3fbc693409, type: 3}

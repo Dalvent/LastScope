@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Midge
   BehaviorType: 1
   MaxHealth: 3
-  Damage: 3
-  Speed: 2
-  ReloadTime: 0.3
+  Damage: 57.36
+  Speed: 1.18
+  ReloadTime: 0.24
   BulletSpeed: 10
   Prefab: {fileID: 7716790116448774766, guid: d525022827910974d8becd859c954c18, type: 3}
