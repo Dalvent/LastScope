@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using LastScope.Factories;
 using LastScope.StaticData;
@@ -18,6 +19,7 @@ namespace LastScope.Characters.Shoot
         public BulletCustomisation BulletCustomisation;
 
         private IProjectileFactory _projectileFactory;
+        private Coroutine _shortingCoroutine;
 
         [Inject]
         public void Construct(IProjectileFactory projectileFactory)
@@ -25,10 +27,14 @@ namespace LastScope.Characters.Shoot
             _projectileFactory = projectileFactory;
         }
 
-
-        private void Start()
+        private void OnEnable()
         {
-            StartCoroutine(Shooting());
+            _shortingCoroutine = StartCoroutine(Shooting());
+        }
+
+        private void OnDisable()
+        {
+            StopCoroutine(_shortingCoroutine);
         }
 
         public virtual void Upgrade(int power = 1)
