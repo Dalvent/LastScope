@@ -37,6 +37,14 @@ namespace LastScope.Extensions
             return vector;
         }
         
+        public static Vector3 ToVector3(this Vector2 vector) =>
+            vector;
+
+        public static Vector3 SetZ(this Vector2 vector, float z)
+        {
+            return new Vector3(vector.x, vector.y, z);
+        }
+        
         public static Vector2 AddX(this Vector2 vector, float value)
         {
             vector.x += value;

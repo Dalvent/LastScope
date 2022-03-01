@@ -61,7 +61,7 @@ namespace LastScope.Logic.Spawner
             {
                 MoveTrajectoryType.Stay => new StayMoveTrajectory(),
                 MoveTrajectoryType.Directional => new DirectionalMoveTrajectory(transform.rotation),
-                MoveTrajectoryType.Way => new WayMoveTrajectory(SpawnerSettings.WayTrajectorySettings),
+                MoveTrajectoryType.Way => new WayMoveTrajectory(transform, SpawnerSettings.WayTrajectorySettings),
                 _ => throw new ArgumentOutOfRangeException(nameof(SpawnerSettings.MovementType), SpawnerSettings.MovementType, null)
             };
         }

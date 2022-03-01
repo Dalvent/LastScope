@@ -1,4 +1,5 @@
-﻿using LastScope.Logic.Spawner;
+﻿using LastScope.Extensions;
+using LastScope.Logic.Spawner;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,20 +11,20 @@ namespace LastScope.Editor
         public static void OnDrawGizmo(EnemySpawner spawner, GizmoType gizmoType)
         {
             MoveWayPosition[] moveWay = spawner.SpawnerSettings.WayTrajectorySettings.MoveWayPositions;
-
+            Vector3 spawnerPosition = spawner.transform.position;
+            
+            if (moveWay.Length > 0)
+            {
+                DrawWayLine(spawnerPosition,  Vector2.zero, moveWay[0].Position);
+            }
+            
             for (int i = 0; i < moveWay.Length - 1; i++)
             {
-                /*
-                be.startPoint = Handles.PositionHandle(be.startPoint, Quaternion.identity);
-                be.endPoint = Handles.PositionHandle(be.endPoint, Quaternion.identity);
-                be.startTangent = Handles.PositionHandle(be.startTangent, Quaternion.identity);
-                be.endTangent = Handles.PositionHandle(be.endTangent, Quaternion.identity);
-
-                Handles.DrawBezier(be.startPoint, be.endPoint, be.startTangent, be.endTangent, Color.red, null, 2f);
-                Gizmos.DrawLine(((Vector2)spawner.transform.position) + moveWay[i].Position,
-                    ((Vector2)spawner.transform.position) + moveWay[i + 1].Position);
-            */
+                DrawWayLine(spawnerPosition, moveWay[i].Position, moveWay[i + 1].Position);
             }
         }
+
+        private static void DrawWayLine(Vector3 spawnerPosition, Vector2 start, Vector2 end) => 
+            Gizmos.DrawLine(start.ToVector3() + spawnerPosition, end.ToVector3() + spawnerPosition);
     }
 }

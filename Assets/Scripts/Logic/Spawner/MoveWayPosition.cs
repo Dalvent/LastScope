@@ -7,7 +7,6 @@ namespace LastScope.Logic.Spawner
     public class MoveWayPosition
     {
         public Vector2 Position;
-        public float RotationArc;
-        public float SpeedMultiplayer;
+        public float SpeedMultiplayer = 0;
     }
 }

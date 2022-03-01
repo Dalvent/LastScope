@@ -6,8 +6,7 @@ namespace LastScope.Extensions
     {
         public static float PerspectiveLocalTop(this Camera camera, float distance)
         {
-            float top = Mathf.Abs(distance * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad - camera.transform.rotation.x * 2));
-            return top;
+            return Mathf.Abs(distance * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad - camera.transform.rotation.x * 2));
         }
         
         public static float PerspectiveLocalBottom(this Camera camera, float distance)
@@ -18,11 +17,8 @@ namespace LastScope.Extensions
         
         public static float PerspectiveHeight(this Camera camera, float distance, out float yOffset)
         {
-            float top = camera.PerspectiveLocalTop(distance);
-            float bottom = camera.PerspectiveLocalBottom(distance);
-            
-            float fullHeight = top - bottom;
-            yOffset = fullHeight * 0.5f + bottom;
+            float fullHeight = camera.PerspectiveLocalTop(distance) - camera.PerspectiveLocalBottom(distance);
+            yOffset = fullHeight * 0.5f + camera.PerspectiveLocalBottom(distance);
             return fullHeight;
         }
     }
